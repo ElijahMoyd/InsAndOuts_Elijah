@@ -2,8 +2,9 @@
 
 int wait = 1000;
 int start;
-int duration = 1;
-int time = 1;
+int duration = 5;
+int time = 5;
+int[] numbers = { 110, 200, 220 };
 void setup(){
 size (600,600);  
 background(50);
@@ -15,7 +16,7 @@ time = millis();
 void draw(){
 pushStyle();
 fill(#c1c1af);
-rect(110, 200, 380, 220);
+rect(numbers[0], numbers[1], 380, numbers[2]);
 popStyle();
 
 
@@ -44,8 +45,8 @@ void operation (){
 for (int i = 20; i < width; i = i+40) {
   fill(millis()*((i+1) * width * 10));
  ellipse(i, 20, 30, 30);
-  ellipse(i, 55, 30, 30);
-   ellipse(i, 100, 30, 30);
+  ellipse(i, 59, 30, 30);
+   ellipse(i, 108, 30, 30);
     ellipse(i, 150, 30, 30);
      ellipse(i, 200, 30, 30);
     ellipse(i, 250, 30, 30);
