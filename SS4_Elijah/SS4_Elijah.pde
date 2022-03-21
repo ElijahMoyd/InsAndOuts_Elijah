@@ -1,18 +1,24 @@
  //2AM Piano by Elijah Moyd
  
- PImage img;
+PImage img;
 import processing.sound.*; SoundFile file;
- Float rotation = random(360);
+Float rotation = random(360);
 float x, y; 
 int i;
 String State;
+PImage guitarimg;
+
+
+
 
  void setup (){
  size(600,600);
  background(255);
  img = loadImage("DsI0TYXXgAAuLsO.jpg");
+ guitarimg = loadImage("guitar.jpg");
  State = "begin";
-    file = new SoundFile(this, "Adult Swim Bump Piano (FULL SONG).mp3");
+ file = new SoundFile(this, "Adult Swim Bump Piano (FULL SONG).mp3");
+ 
  }
  
  void draw(){
@@ -20,18 +26,22 @@ String State;
  menu();
  } else if (State == "Piano"){
   Piano(); 
- }
- 
+ } 
  reset();
+ 
+ 
+ 
  }
  
  void menu (){
    for (int i = 0; i < width; i++) {
     float r = random(255);
-    stroke(r);
+    stroke(random(i));
+      
+
      strokeWeight(4);
- line(i, 0, 100, 600);
- line(i, 0, 500, 600);
+ line(random(i), 0, 100, 600);
+ line(random(i), 0, 500, 600);
   strokeWeight(8);
   }
 /* strokeWeight(4);
@@ -80,8 +90,11 @@ text("Anger of the Earth - Nomak",100,100);
    if (key == 'd' || key == 'D')
  filter(INVERT);
  }
+text("Guitar",100,160);
+
+
+  }
  
- }
   
   void reset() {
 if (keyPressed){
@@ -89,5 +102,11 @@ if (keyPressed){
  
   menu();
 }
+}
+
+void guitar(){
+image(guitarimg,0,0);
+img.resize(600, 600);
+tint(mouseX, 153, mouseY, 126); 
 }
   
